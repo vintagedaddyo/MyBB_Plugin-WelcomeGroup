@@ -21,7 +21,9 @@
 // disallow direct access to this file
 
 if(!defined("IN_MYBB"))
+{
 	die("This file cannot be accessed directly.");
+}
 
 // add hooks
 
@@ -48,10 +50,6 @@ function welcomegroup_global_run()
 
   if($mybb->user['uid'] != 0)
   {
-	// Format the welcome back message
-
-	//$lang->welcome_back = $lang->sprintf($lang->welcome_back, build_profile_link(htmlspecialchars_uni($mybb->user['username']), $mybb->user['uid']), $lastvisit);
-
 	// Format the welcome back message
 
      $welcome_back_user = format_name($mybb->user['username'], $mybb->user['usergroup'], $mybb->user['displaygroup']);
